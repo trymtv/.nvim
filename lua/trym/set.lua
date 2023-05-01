@@ -3,7 +3,6 @@ vim.opt.number = true
 
 -- Set autotoggle of number and relative number to focuse and insert
 local numberToggleGroup = vim.api.nvim_create_augroup("NumberToggle", {clear = true})
-
 vim.api.nvim_create_autocmd(
 	{"BufEnter", "FocusGained", "InsertLeave", "WinEnter"},
 	{pattern = "*", command = "if &nu && mode() != \"i\" | set rnu   | endif", group = numberToggleGroup
